@@ -1,0 +1,31 @@
+---
+abstract: 'Interface to Transmission'
+author:
+  - 'Jan Henning Thorsen'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Transmission-Client
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  DateTime: 0.5
+  JSON: 2.15
+  LWP::UserAgent: 5.8
+  MIME::Base64: 3
+  Moose: 0.8
+  MooseX::Types: 0.2
+  Sub::Exporter: 0.95
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
