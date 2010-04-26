@@ -6,7 +6,7 @@ Transmission::Client - Interface to Transmission
 
 =head1 VERSION
 
-0.03
+0.04
 
 =head1 DESCRIPTION
 
@@ -67,8 +67,9 @@ use LWP::UserAgent;
 use MIME::Base64;
 use Transmission::Torrent;
 use Transmission::Session;
+use constant RPC_DEBUG => $ENV{'TC_RPC_DEBUG'};
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 our $SESSION_ID_HEADER_NAME = 'X-Transmission-Session-Id';
 
 with 'Transmission::AttributeRole';
@@ -196,6 +197,7 @@ information.
 
 has torrents => (
     is => 'rw',
+    isa => 'ArrayRef',
     lazy => 1,
     clearer => "clear_torrents",
     builder => "read_torrents",
@@ -211,8 +213,8 @@ Get Transmission version.
 
 has version => (
     is => 'ro',
-    lazy_build => 1,
     isa => 'Str',
+    lazy_build => 1,
 );
 
 around version => sub {
@@ -519,6 +521,11 @@ sub rpc {
             });
 
     $res = $self->_ua->post($self->url, Content => $post);
+
+    if(RPC_DEBUG) {
+        print "post: $post\n";
+        print "status_line: ", $res->status_line, "\n";
+    }
 
     unless($res->is_success) {
         if($res->code == 409 and !$nested) {
