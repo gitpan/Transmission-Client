@@ -6,7 +6,7 @@ Transmission::Client - Interface to Transmission
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 DESCRIPTION
 
@@ -24,7 +24,7 @@ If you want to communicate with "transmission-daemon", this is a module
 which can help you with that.
 
 The documentation is half copy/paste from the Transmission RPC spec:
-L<http://trac.transmissionbt.com/browser/trunk/doc/rpc-spec.txt>
+L<https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt>
 
 This module differs from L<P2P::Transmission> in (at least) two ways:
 This one use L<Moose> and it won't die. The latter is especially
@@ -50,6 +50,20 @@ annoying in the constructor.
 
  print $client->session->download_dir, "\n";
 
+=head1 FAULT HANDLING
+
+In C<0.06> L<Transmission::Client> can be constructed with "autodie" set
+to true, to make this object confess instead of just setting L</error>.
+Example:
+
+    my $client = Transmission::Client->new(autodie => 1);
+
+    eval {
+        $self->add(filename => 'foo.torrent');
+    } or do {
+        # add() failed...
+    };
+
 =head1 SEE ALSO
 
 L<Transmission::AttributeRole>
@@ -62,15 +76,16 @@ L<Transmission::Utils>
 use Moose;
 use DateTime;
 use DateTime::Duration;
-use JSON;
+use JSON::Any;
 use LWP::UserAgent;
 use MIME::Base64;
 use Transmission::Torrent;
 use Transmission::Session;
 use constant RPC_DEBUG => $ENV{'TC_RPC_DEBUG'};
 
-our $VERSION = '0.05';
+our $VERSION = eval '0.06';
 our $SESSION_ID_HEADER_NAME = 'X-Transmission-Session-Id';
+my $JSON = JSON::Any->new;
 
 with 'Transmission::AttributeRole';
 
@@ -110,7 +125,6 @@ sub _build__url {
     return $url;
 }
 
-
 =head2 error
 
  $str = $self->error;
@@ -118,12 +132,24 @@ sub _build__url {
 Returns the last error known to the object. All methods can return
 empty list in addtion to what spesified. Check this attribute if so happens.
 
+Like L</autodie>? Create your object with C<autodie> set to true and this
+module will throw exceptions in addition to setting this variable.
+
 =cut
 
 has error => (
     is => 'rw',
     isa => 'Str',
     default => '',
+    clearer => '_clear_error',
+    trigger => sub { $_[0]->_autodie and confess $_[1] },
+);
+
+has _autodie => (
+    is => 'ro',
+    init_arg => 'autodie',
+    isa => 'Bool',
+    default => 0,
 );
 
 =head2 username
@@ -185,6 +211,7 @@ C<stats()> is a proxy method on L</session>.
 has session => (
     is => 'ro',
     lazy => 1,
+    predicate => 'has_session',
     handles => [qw/stats/],
     default => sub {
         Transmission::Session->new( client => $_[0] );
@@ -206,10 +233,14 @@ information.
 
 has torrents => (
     is => 'rw',
-    isa => 'ArrayRef',
+    traits => ['Array'],
     lazy => 1,
     clearer => "clear_torrents",
     builder => "read_torrents",
+    predicate => 'has_torrents',
+    handles => {
+        torrent_list => 'elements',
+    },
 );
 
 =head2 version
@@ -225,16 +256,6 @@ has version => (
     isa => 'Str',
     lazy_build => 1,
 );
-
-around version => sub {
-    my $next = shift;
-    my $self = shift;
-    my $version = $self->$next(@_);
-
-    $self->clear_version unless($version);
-
-    return $version || undef;
-};
 
 sub _build_version {
     my $self = shift;
@@ -282,7 +303,7 @@ Either "filename" or "metainfo" MUST be included. All other arguments are
 optional.
 
 See "3.4 Adding a torrent" from
-L<http://trac.transmissionbt.com/browser/trunk/doc/rpc-spec.txt>
+L<https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt>
 
 =cut
 
@@ -295,11 +316,11 @@ sub add {
         return;
     }
     elsif($args{'filename'}) {
-        return $self->rpc('torrent-add', %args);
+        return $self->rpc('torrent-add', @_);
     }
     elsif($args{'metainfo'}) {
         $args{'metainfo'} = encode_base64($args{'metainfo'});
-        return $self->rpc('torrent-add', %args);
+        return $self->rpc('torrent-add', @_);
     }
     else {
         $self->error("Need either filename or metainfo argument");
@@ -319,7 +340,7 @@ sub add {
 C<ids> can also be the string "all". C<ids> is required.
 
 See "3.4 Removing a torrent" from
-L<http://trac.transmissionbt.com/browser/trunk/doc/rpc-spec.txt>
+L<https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt>
 
 =cut
 
@@ -350,7 +371,7 @@ sub remove {
 C<ids> can also be the string "all". C<ids> and C<location> is required.
 
 See "3.5 moving a torrent" from
-L<http://trac.transmissionbt.com/browser/trunk/doc/rpc-spec.txt>
+L<https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt>
 
 =cut
 
@@ -359,7 +380,7 @@ sub move {
     my %args = @_;
 
     if(!defined $args{'location'}) {
-        $self->error("ids argument is required");
+        $self->error("location argument is required");
         return;
     }
 
@@ -457,7 +478,7 @@ sub read_torrents {
 
     # set fields
     if($args{'lazy_read'}) {
-        $args{'fields'} = [qw/id/];
+        $args{'fields'} = ['id'];
     }
     else {
         $args{'fields'} = [
@@ -515,7 +536,7 @@ sub rpc {
     my $nested = delete $args{'_nested'}; # internal flag
     my($tag, $res, $post);
 
-    $self->_normal2Camel(\%args);
+    $method = $self->_normal2Camel($method);
 
     # make sure ids are numeric
     if(ref $args{'ids'} eq 'ARRAY') {
@@ -523,7 +544,7 @@ sub rpc {
     }
 
     $tag  = int rand 2*16 - 1;
-    $post = to_json({
+    $post = $JSON->encode({
                 method    => $method,
                 tag       => $tag,
                 arguments => \%args,
@@ -541,11 +562,13 @@ sub rpc {
             $self->session_id($res->header($SESSION_ID_HEADER_NAME));
             return $self->rpc($method => %args, _nested => 1);
         }
-        $self->error($res->status_line);
-        return;
+        else {
+            $self->error($res->status_line);
+            return;
+        }
     }
 
-    $res = from_json($res->content);
+    $res = $JSON->decode($res->content);
 
     unless($res->{'tag'} == $tag) {
         $self->error("Tag mismatch");
@@ -556,7 +579,7 @@ sub rpc {
         return;
     }
 
-    $self->error("");
+    $self->_clear_error;
 
     return $res->{'arguments'};
 }

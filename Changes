@@ -1,5 +1,13 @@
 Revision history for Transmission-Client
 
+0.06     Sun Feb  6 18:33:13 CET 2011
+       - Fix RT62805: location to the rpc-spec is updated:
+         https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt
+       - Fix RT62805: methods given to rpc() can contain both
+         underscores and hyphens.
+       - Adding "autodie" to new() will make the module throw
+         exceptions, instead of silently setting "error".
+
 0.05     Sat May 29 22:27:02 CEST 2010
        - Fix RT57970: username() and password() does not work
 

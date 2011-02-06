@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.95'
+generated_by: 'Module::Install version 1.00'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,7 +20,7 @@ no_index:
     - t
 requires:
   DateTime: 0.5
-  JSON: 2.15
+  JSON::Any: 1.2
   LWP::UserAgent: 5.8
   MIME::Base64: 3
   Moose: 0.8
@@ -28,4 +28,4 @@ requires:
   Sub::Exporter: 0.95
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.05
+version: 0.06
