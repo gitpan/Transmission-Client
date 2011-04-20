@@ -20,6 +20,7 @@ no_index:
     - t
 requires:
   DateTime: 0.5
+  JSON: 2.02
   JSON::Any: 1.2
   LWP::UserAgent: 5.8
   MIME::Base64: 3
@@ -28,4 +29,4 @@ requires:
   Sub::Exporter: 0.95
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.06
+version: 0.0601
