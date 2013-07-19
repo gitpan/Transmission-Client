@@ -6,7 +6,7 @@ Transmission::Client - Interface to Transmission
 
 =head1 VERSION
 
-0.0603
+0.07
 
 =head1 DESCRIPTION
 
@@ -83,7 +83,7 @@ use Transmission::Torrent;
 use Transmission::Session;
 use constant RPC_DEBUG => $ENV{'TC_RPC_DEBUG'};
 
-our $VERSION = eval '0.0603';
+our $VERSION = '0.07';
 our $SESSION_ID_HEADER_NAME = 'X-Transmission-Session-Id';
 my $JSON = JSON::Any->new;
 
@@ -130,7 +130,7 @@ sub _build__url {
  $str = $self->error;
  
 Returns the last error known to the object. All methods can return
-empty list in addtion to what spesified. Check this attribute if so happens.
+empty list in addition to what specified. Check this attribute if so happens.
 
 Like L</autodie>? Create your object with C<autodie> set to true and this
 module will throw exceptions in addition to setting this variable.
@@ -476,11 +476,16 @@ sub read_torrents {
     my %args = @_ == 1 ? (ids => $_[0]) : @_;
     my $list;
 
-    # set fields
-    if($args{'lazy_read'}) {
+    # set fields...
+    if(exists $args{'fields'}) { # ... based on user input
+        # We should always request id
+        push @{$args{'fields'}}, 'id' unless
+            grep {'id' eq $_} @{$args{'fields'}};
+    }
+    elsif($args{'lazy_read'}) { # ... as few fields as possible
         $args{'fields'} = ['id'];
     }
-    else {
+    else { # ... all fields
         $args{'fields'} = [
             keys %Transmission::Torrent::READ,
             keys %Transmission::Torrent::BOTH,
@@ -537,6 +542,10 @@ sub rpc {
     my($tag, $res, $post);
 
     $method = $self->_normal2Camel($method);
+
+    # The keys need to be dashes as well
+    # _normal2Camel modifies a hashref in places
+    $self->_normal2Camel( \%args );
 
     # make sure ids are numeric
     if(ref $args{'ids'} eq 'ARRAY') {
@@ -618,10 +627,12 @@ the same terms as Perl itself.
 
 =head1 AUTHOR
 
-Jan Henning Thorsen
+Jan Henning Thorsen - C<jhthorsen@cpan.org>
 
 =cut
 
 no MIME::Base64;
 no Moose;
+1;
+oose;
 1;
