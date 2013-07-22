@@ -1,0 +1,58 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.73.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 4dcb381417a1ffe718192bb4024daf1e0583e999 Changes
+SHA1 9c9c5ab7c09ce0559d287e4093940c2c33651625 MANIFEST
+SHA1 883301fa7957fd4a9f6ec0a3060f932acab72de9 META.yml
+SHA1 0faf727c1d5af9c4bac9cbeacab66d95179e3296 Makefile.PL
+SHA1 e27aa9a3d5c4b4e025f76a4a0369735819b8d58a README
+SHA1 230315aae9a9f0369f7ba70e1b19d8707afa9938 bin/transmission-client.pl
+SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
+SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
+SHA1 61ab1dd37e33ddbe155907ce51df8a3e56ac8bbf inc/Module/Install/AutoInstall.pm
+SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
+SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
+SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
+SHA1 66d3d335a03492583a3be121a7d888f63f08412c inc/Module/Install/Include.pm
+SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
+SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
+SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
+SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
+SHA1 1c6aca2e0913f2dbb731ece66cc066ec12032eb0 lib/Transmission/AttributeRole.pm
+SHA1 3b0b768e67a67e83ee04652bcf5efb8f1e9f245f lib/Transmission/Client.pm
+SHA1 61c63b4cdeb64b5dee307e8b1e16f8a1f1f53e84 lib/Transmission/Session.pm
+SHA1 b83f773127346a5bce0bf4697fd2deb093931211 lib/Transmission/Stats.pm
+SHA1 68986e5c85f9faed4786c2c749666eef91766f8f lib/Transmission/Torrent.pm
+SHA1 8b050713ebe24db633b14b545965bbda32c36559 lib/Transmission/Torrent/File.pm
+SHA1 669a7cdefa80b44527bbfb2da5859f9946c88491 lib/Transmission/Types.pm
+SHA1 f4f5df65c0e073409700dcb9f0f491e1415ba950 lib/Transmission/Utils.pm
+SHA1 c3fdd0042a42ef386424f88b466b84b18dcb2cda t/00-load.t
+SHA1 2daff1efecd12e1da373c1b19f337c3011b8c436 t/00-pod-coverage.t
+SHA1 9ec1f6396d87121fe918ae2f7b34f4e168668997 t/00-pod.t
+SHA1 c86861806b260e8470fae0ee7e20dc8e52bdedeb t/05-utils.t
+SHA1 a9e88060abfd2f79ed80225fe520bf0b395f6fcf t/10-client.t
+SHA1 132c5ae68de603ffe2bfe5fcec6a4408daf0f1a5 t/20-real.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQEcBAEBAgAGBQJR7W8EAAoJEPoSOGhqL2in5akH/1Y6wLU4zWRvA8aheFLpBQlD
+uXK7BHlDXqtoJ9reeCnFWBfktHb6BpYLGRvpxhGdKQ/WRHYSTMeJilenYqS8Jtb8
+N02STZ/ZS+HsL/HjHnba2EMV55lhIdGzsg3U1F994iR/Nkal4JaY4cqU7Z7Zxv3A
+ieGqVbADHJUTP/Pj8nxiRsQuRWlE/RpW3LkhUD8Hv3DaJcMvlOOZLtO74Mr6YWn4
+FBE/WOMFfmC+9dabre6vtti+xm9IJRXMQiWn6Yzo2U3rmwKCfDWKfEEcgXR3IHvi
+9psNkrxJL1WED24Q61gYc1fdvv3fIyuF8+Sbgamd7yx5hHj5S9nXkdb99Gi2lb4=
+=dsxI
+-----END PGP SIGNATURE-----
