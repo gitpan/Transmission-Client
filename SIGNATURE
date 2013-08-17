@@ -15,12 +15,12 @@ not run its Makefile.PL or Build.PL.
 Hash: SHA1
 
 SHA1 53a01d4c8d1a7422ea815252c9a7b57ac03dcada .gitignore
-SHA1 52c509478826e8c2989496f98e1b7583f88c55fb Changes
+SHA1 99edd0fbef4699ad3e9c8ff6c82fe87d16b12ab1 Changes
 SHA1 04dab502199c9f84e0c2697a058586e613b147dd MANIFEST
 SHA1 1678dd17f5f32c9150b27d4ed06de3c42897fe15 MANIFEST.SKIP
-SHA1 84217d6d1e8a7565a471f510df9316feecd8f787 META.yml
+SHA1 5b5fb792727436562f0b20e3e74afd1afbd11363 META.yml
 SHA1 0609624a41e41411aeb5cb3925af54c00d749fe6 Makefile.PL
-SHA1 1a0f1580f3a766bd552d6b6c180776921225b9df README
+SHA1 2d57174c427ce11172b27e7fafda293290e1ebd1 README
 SHA1 230315aae9a9f0369f7ba70e1b19d8707afa9938 bin/transmission-client.pl
 SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
 SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
@@ -34,7 +34,7 @@ SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 2f5ec6591db919e1fcc887b6262feb7284c7bc71 lib/Transmission/AttributeRole.pm
-SHA1 715bb798f8e95022ee97edd987d77a1fdd91b7b3 lib/Transmission/Client.pm
+SHA1 191294d531848b80063cdee8426ff78e8893c7e3 lib/Transmission/Client.pm
 SHA1 56f9dee81a04e18d59d9ee08b92da3e7d53c3b80 lib/Transmission/Session.pm
 SHA1 b6bb28e3ee09b6c6c1c69c67ac68dcea144a92e1 lib/Transmission/Stats.pm
 SHA1 99102693180a52b3cb35a04eeb7f8faee2c74d68 lib/Transmission/Torrent.pm
@@ -46,13 +46,13 @@ SHA1 883ff308e3ecd9acd2ce28ffd27e230df83ad6a9 t/00-pod-coverage.t
 SHA1 beba99dd1875b0f83c7662f2f932e69731ceeae2 t/00-pod.t
 SHA1 ea06e8f607c61c88273352b2c8d88c2877fe988e t/05-utils.t
 SHA1 a35a95c29cdbd3bfebb4937f83312d8599c736d2 t/10-client.t
-SHA1 86e2b127fee53d9578207829a3ffd16b02ab17ed t/10-torrent.t
+SHA1 7469863ac98873f4fb2591d12c42da615ab9b5c5 t/10-torrent.t
 SHA1 1ccbfc08071ab4ea3a76949e9333de508a5560df t/10-types.t
 SHA1 385390cb7ad6483281fdefdbbdb03861450fec1b t/20-real.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iEYEARECAAYFAlIOR9YACgkQCPS7eH/A+7pixwCdHuylC3RPLnfM8XmYR8a+8rqi
-R5MAoNlwhfoFoyuOBQthz5zM84WjmZk+
-=/DJI
+iEYEARECAAYFAlIPO4sACgkQCPS7eH/A+7p44ACfX7jhgv25A8oSbVlxWfKJyhrp
+iHAAn10liE9fXL/43TaLRwfVdeWBnHg2
+=5rrL
 -----END PGP SIGNATURE-----
