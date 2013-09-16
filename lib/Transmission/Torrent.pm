@@ -1,9 +1,10 @@
 # ex:ts=4:sw=4:sts=4:et
 package Transmission::Torrent;
+# See Transmission::Client for copyright statement.
 
 =head1 NAME
 
-Transmission::Torrent
+Transmission::Torrent - Transmission torrent object
 
 =head1 DESCRIPTION
 

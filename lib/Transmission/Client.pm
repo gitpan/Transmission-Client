@@ -1,5 +1,12 @@
 # ex:ts=4:sw=4:sts=4:et
 package Transmission::Client;
+# Copyright 2009-2013, Jan Henning Thorsen <jhthorsen@cpan.org>
+#    and contributors
+#
+# All rights reserved.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the same terms as Perl itself.
 
 =head1 NAME
 
@@ -7,7 +14,7 @@ Transmission::Client - Interface to Transmission
 
 =head1 VERSION
 
-0.0802
+0.0803
 
 =head1 DESCRIPTION
 
@@ -84,7 +91,7 @@ use Transmission::Torrent;
 use Transmission::Session;
 use constant RPC_DEBUG => $ENV{'TC_RPC_DEBUG'};
 
-our $VERSION = '0.0802';
+our $VERSION = '0.0803';
 our $SESSION_ID_HEADER_NAME = 'X-Transmission-Session-Id';
 my $JSON = JSON::Any->new;
 
@@ -626,11 +633,19 @@ sub read_all {
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
 
-=head1 AUTHOR
+=head1 COPYRIGHT AND AUTHORS
 
-Jan Henning Thorsen - C<jhthorsen@cpan.org>
+Copyright 2009-2013, Jan Henning Thorsen <jhthorsen@cpan.org> and contributors
 
 Current maintainer: Olof Johansson - C<olof@cpan.org>
+
+=head2 CONTRIBUTORS
+
+=over
+
+=item Andrew Fresh
+
+=back
 
 =cut
 

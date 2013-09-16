@@ -1,7 +1,7 @@
 ---
 abstract: 'Interface to Transmission'
 author:
-  - 'Jan Henning Thorsen - C<jhthorsen@cpan.org>'
+  - '-2013, Jan Henning Thorsen <jhthorsen@cpan.org> and contributors'
 build_requires:
   ExtUtils::MakeMaker: 6.36
   Test::More: 0
@@ -31,4 +31,4 @@ requires:
   Sub::Exporter: 0.95
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.0802
+version: 0.0803

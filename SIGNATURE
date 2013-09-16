@@ -14,14 +14,13 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 53a01d4c8d1a7422ea815252c9a7b57ac03dcada .gitignore
-SHA1 35d65df03ecef8b84ea6d4438608595be5295ac4 Changes
-SHA1 04dab502199c9f84e0c2697a058586e613b147dd MANIFEST
-SHA1 1678dd17f5f32c9150b27d4ed06de3c42897fe15 MANIFEST.SKIP
-SHA1 27904a789b211c32d8c51955a0974b8dbdaa66b5 META.yml
+SHA1 738d11f104a6d75bd7113ec330d4af0b35362d51 Changes
+SHA1 6272f6705e8869321d3eda276c7e0b7e7e303930 MANIFEST
+SHA1 9c6195dde9986212699ac40813eb37601fc48db3 MANIFEST.SKIP
+SHA1 87526d4d25fefd29d684acf9f7e1a19edf8e08b3 META.yml
 SHA1 0609624a41e41411aeb5cb3925af54c00d749fe6 Makefile.PL
-SHA1 d6098eec146daf91b0d089caecda068d86e07b20 README
-SHA1 230315aae9a9f0369f7ba70e1b19d8707afa9938 bin/transmission-client.pl
+SHA1 4aa75ad59560c70911fa86a71e671317d97b60aa README
+SHA1 fe12845a06227e1efbc38e6ce1e65be91bcca9ac bin/transmission-client.pl
 SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
 SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
 SHA1 61ab1dd37e33ddbe155907ce51df8a3e56ac8bbf inc/Module/Install/AutoInstall.pm
@@ -33,14 +32,14 @@ SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
 SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
-SHA1 2f5ec6591db919e1fcc887b6262feb7284c7bc71 lib/Transmission/AttributeRole.pm
-SHA1 ea30f9d08a0cb3020fb46b5e772620cff72a62b6 lib/Transmission/Client.pm
-SHA1 56f9dee81a04e18d59d9ee08b92da3e7d53c3b80 lib/Transmission/Session.pm
-SHA1 b6bb28e3ee09b6c6c1c69c67ac68dcea144a92e1 lib/Transmission/Stats.pm
-SHA1 30c9b647cf0b264d49e50a7b1cb2d16705ec7753 lib/Transmission/Torrent.pm
-SHA1 794b1a2bc49bf55df5a72da03c20be0b53c46a06 lib/Transmission/Torrent/File.pm
-SHA1 5e9ae120b051d4e4bfa9bbe5df0f11390059f312 lib/Transmission/Types.pm
-SHA1 221aa54a43ec426d3a4d1963202233a93dbc226a lib/Transmission/Utils.pm
+SHA1 edc750486cb6911cbf22cf34ba380c67c9c92036 lib/Transmission/AttributeRole.pm
+SHA1 6d3302f205d8452c17518f5fb20f819290b17afb lib/Transmission/Client.pm
+SHA1 11202a5076d86bf99eeeebc0aa409b37c267f8f0 lib/Transmission/Session.pm
+SHA1 5528f808ad751231a3f2cf56f7d863df35ddac42 lib/Transmission/Stats.pm
+SHA1 7f030e485a5aee3e7d15d224f7df759340fa3f74 lib/Transmission/Torrent.pm
+SHA1 1b81c2d63dfe3b503fab6e50e07a2ff38e3769d2 lib/Transmission/Torrent/File.pm
+SHA1 17281c7c9dbca5a833880a943fe0eb908a767a21 lib/Transmission/Types.pm
+SHA1 d4a58883248d6de7b3f16449f590f239f7c12665 lib/Transmission/Utils.pm
 SHA1 97edfe3f9c9622e867a9e3c1ca8716c9fb548494 t/00-load.t
 SHA1 883ff308e3ecd9acd2ce28ffd27e230df83ad6a9 t/00-pod-coverage.t
 SHA1 beba99dd1875b0f83c7662f2f932e69731ceeae2 t/00-pod.t
@@ -52,7 +51,7 @@ SHA1 385390cb7ad6483281fdefdbbdb03861450fec1b t/20-real.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.14 (GNU/Linux)
 
-iEYEARECAAYFAlIU4tsACgkQCPS7eH/A+7oXIACffiffu7IVlW7cGmKKZbq5TEf8
-6aoAnjw4yAbxCaeMLBq6i9/C6jNO4kK1
-=LjmD
+iEYEARECAAYFAlI3P4cACgkQCPS7eH/A+7pfJwCgzMRkU/X1tgcOfPvlFeRwiftK
++KkAn0wEgjBXJQiu/6tY6Hfm5qZSvOy/
+=3sev
 -----END PGP SIGNATURE-----
