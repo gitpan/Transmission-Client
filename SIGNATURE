@@ -14,10 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 738d11f104a6d75bd7113ec330d4af0b35362d51 Changes
+SHA1 dafc5864d114d73797fa5f975c7e3ef9ad325f15 Changes
 SHA1 6272f6705e8869321d3eda276c7e0b7e7e303930 MANIFEST
 SHA1 9c6195dde9986212699ac40813eb37601fc48db3 MANIFEST.SKIP
-SHA1 87526d4d25fefd29d684acf9f7e1a19edf8e08b3 META.yml
+SHA1 bb66805f9204d9800b377809d999751de4733beb META.yml
 SHA1 0609624a41e41411aeb5cb3925af54c00d749fe6 Makefile.PL
 SHA1 4aa75ad59560c70911fa86a71e671317d97b60aa README
 SHA1 fe12845a06227e1efbc38e6ce1e65be91bcca9ac bin/transmission-client.pl
@@ -33,12 +33,12 @@ SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 edc750486cb6911cbf22cf34ba380c67c9c92036 lib/Transmission/AttributeRole.pm
-SHA1 6d3302f205d8452c17518f5fb20f819290b17afb lib/Transmission/Client.pm
+SHA1 7a62166d63e99130696beec4ccbd4bdcfe28bba4 lib/Transmission/Client.pm
 SHA1 11202a5076d86bf99eeeebc0aa409b37c267f8f0 lib/Transmission/Session.pm
 SHA1 5528f808ad751231a3f2cf56f7d863df35ddac42 lib/Transmission/Stats.pm
 SHA1 7f030e485a5aee3e7d15d224f7df759340fa3f74 lib/Transmission/Torrent.pm
 SHA1 1b81c2d63dfe3b503fab6e50e07a2ff38e3769d2 lib/Transmission/Torrent/File.pm
-SHA1 17281c7c9dbca5a833880a943fe0eb908a767a21 lib/Transmission/Types.pm
+SHA1 ff54868614dabaaf5c4f10097c987803288df16c lib/Transmission/Types.pm
 SHA1 d4a58883248d6de7b3f16449f590f239f7c12665 lib/Transmission/Utils.pm
 SHA1 97edfe3f9c9622e867a9e3c1ca8716c9fb548494 t/00-load.t
 SHA1 883ff308e3ecd9acd2ce28ffd27e230df83ad6a9 t/00-pod-coverage.t
@@ -49,9 +49,19 @@ SHA1 6860c5531dcee144168ee720402f94fc69699eb7 t/10-torrent.t
 SHA1 1ccbfc08071ab4ea3a76949e9333de508a5560df t/10-types.t
 SHA1 385390cb7ad6483281fdefdbbdb03861450fec1b t/20-real.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.14 (GNU/Linux)
+Version: GnuPG v1
 
-iEYEARECAAYFAlI3P4cACgkQCPS7eH/A+7pfJwCgzMRkU/X1tgcOfPvlFeRwiftK
-+KkAn0wEgjBXJQiu/6tY6Hfm5qZSvOy/
-=3sev
+iQIcBAEBAgAGBQJUQ+lzAAoJEFDVLxLOThOZDCQQAKCRHVRUGLqlua4Wy0SfEPNC
+6WipYqsspdN5jIPi8479SOOvUDPg96Vc6JiPCqg+iBehW4Nx1qsJZhQbUrAE9/i/
+2vxjjcNwtsy2RjFA8KS2wRim3aF/YODWdd33DNZRayKIUHZ3yBBaRng5wRscKqrM
+SuEUTuMyLllLL/ti52koFKJDloRtSDFmQwA78isUCas5BPBHlCaEQlsde/y3RJYK
+jhfRONj/UJIGv/SUqY9gnnWvsKUPNBAWJ62hp2cgYNhpW5lJBzrnRQ0HnRyrK/l2
+R9DUNE9+T/CzB4PavKioLdstoFGHmQi7SeJtdgDXyewwrmRfWugWQ2OE+YDp/bG5
++73Mn6C0Zr3IPjdEmc3rqjLh1PxpUSr/B0nECjFC3V4/R7J/jXoM+K3BQv6TjjwY
+no7gFLFx8BZUrGySL6ZCmeDUiE7eNvXBv/L2t+b3wcODjOkuhNAKRD6+LTjFN+K2
+d14erHgNbpjNn1q/PguDVRQUG1cvf3UEKvGuE1O3JLE77ETONQ5eNxHk8EjiiyAj
+9aBE6k/F6yYk9okDUCPyrPByHLS66ik8kUeR9y6SxDcwV2WPxX4W1X+nl2mSua6r
+ChnZVcRcd7V6RmcggmGT6hf6ig+uGQB5TErAK/UbvFczy2+PrisB2j97YTCBiNSQ
+6rsZa2LwG4WeQSotMzKF
+=gq23
 -----END PGP SIGNATURE-----

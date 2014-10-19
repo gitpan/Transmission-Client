@@ -21,7 +21,7 @@ no_index:
     - t
 requires:
   DateTime: 0.5
-  JSON: 2.02
+  JSON: '2.02'
   JSON::Any: 1.2
   LWP::UserAgent: 5.8
   List::MoreUtils: 0
@@ -31,4 +31,4 @@ requires:
   Sub::Exporter: 0.95
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.0803
+version: '0.0804'
